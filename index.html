@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <title>Prueba de entrada MERN</title>
+  </head>
+  <body>
+    <main
+    id="home"
+    >
+      <header>
+        <div class="container__logo">
+          <img src="./images/logo.svg" id="logo" />
+          <p>Countries Search</p>
+        </div>
+        <div 
+        
+        class="container__search">
+          <form class="container__input" id="form">
+
+            <input type="text" placeholder="Search Countries" id="text_input" value=""/>
+
+            <button type="submit">
+              <img src="./images/search.svg" />
+            </button>
+          </form>
+           <div
+           class="container__options"
+           id="container_continents"
+           >
+           <div class="card card__options options" id="continents">
+            <div class="card__selectbox select-box">
+              <div class="card__optionscontainer options-container">
+                <div class="card__option option"><input class="radio" type="radio" id="Africa" name="continentes"
+                    value="Africa"><label for="Africa">Africa</label></div>
+                <div class="card__option option"><input class="radio" type="radio" id="Americas" name="continentes"
+                    value="Americas"><label for="Americas">America</label></div>
+                <div class="card__option option"><input class="radio" type="radio" id="Asia" name="continentes"
+                    value="Asia"><label for="Asia">Asia</label></div>
+                <div class="card__option option"><input class="radio" type="radio" id="Europe" name="continentes"
+                    value="Europe"><label for="Europe">Europa</label></div>
+                <div class="card__option option"><input class="radio" type="radio" id="Oceania" name="continentes"
+                    value="Oceania"><label for="Oceania">Oceania</label></div>
+                <div class="card__option option"><input class="radio" type="radio" id="Oceania" name="continentes"
+                      value="Todos"><label for="todos">Todos</label></div>
+              </div>
+              <div class="card__select selected">Filter by Regions<div class="arrow"><i class="fa fa-arrow-down"
+                    aria-hidden="true"></i></div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </header>
+      <div class="container__principal">
+        <section id="container_home">
+          <div class="container_card" id="container__card"></div>
+        </section>
+        <section id="details" class="details_container">
+          <h2 class="title_details">DETAILS</h2>
+          <div class="card_details">
+            <div>
+              <article>
+                <img class="card_details_img" id="details_img_flags" />
+                <p id="details_name"></p>
+                <p id="details_capital"></p>
+              </article>
+            </div>
+            <div>
+              <article>
+                <img class="card_details_shield" id="details_escudo" />
+                <p id="details_lenguage"></p>
+                <p id="details_fronters"></p>
+              </article>
+            </div>
+            <div>
+              <article>
+                <p><span id="details_region"></span></p>
+                <p><span id="details_population"></span></p>
+                <p><span id="details_time_zone"></span></p>
+              </article>
+            </div>
+          </div>
+        </section>
+        <section id="search_countries">
+          <article class="card_container" id="article-search">
+            <div class="card_linear"></div>
+            <div class="card_img" id="img_search_countries">
+              <div class="card_info_aditional">
+                <div>
+                  <img
+                    class="card_info_icon"
+                    id="countries_poblation_icon"
+                    src="./images/grupo.png"
+                  />
+                  <span id="countries_poblation"></span>
+                </div>
+                <div>
+                  <img
+                    class="card_info_icon"
+                    id="countries_capital_icon"
+                    src="./images/mundo.png"
+                  />
+                  <span id="countries_capital"></span>
+                </div>
+              </div>
+            </div>
+            <div class="card_info">
+              <p id="name_countries"></p>
+              <p id="continent_countires"></p>
+            </div>
+          </article>
+        </section>
+        <section id="notfound" class="container__notfound">
+           <h3>no se encontro el pais </h3>
+        </section>
+      </div>
+    </main>
+
+    <div class="container__loader">
+      <span class="loader"></span>
+    </div>
+   <script type="module" src="./js/app.js"></script>
+  </body>
+</html>
