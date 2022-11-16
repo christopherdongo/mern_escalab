@@ -160,6 +160,20 @@ header{
   width: 100%;
 }
 
+.button__volver{
+  padding: 1rem;
+  background-color: #4e73de;
+  border: 0px ;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button__volver:hover{
+  opacity: 0.8;
+  background: gray;
+  color: white;
+}
+
 .card_container{
   display: flex;
   justify-content: center;

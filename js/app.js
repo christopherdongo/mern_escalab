@@ -22,6 +22,7 @@ const main = document.getElementsByTagName("main")[0];
 const container__loader = document.querySelector(".container__loader");
 const search_countries = document.getElementById("search_countries");
 const logo = document.getElementById("logo");
+const volver = document.getElementById("volver");
 
 /*options*/
 const selected = document.querySelector(".selected");
@@ -119,6 +120,24 @@ optionsList.forEach((option) => {
 
 /*dar lick al logo y regresar al home*/
 logo.addEventListener("click", (e) => {
+  const params = location.hash.split("/")[0];
+  inputBox.value='';
+  if (params !== "#home" || params === "#home") {
+    showHeader("flex");
+    hideShowContainerLabel("main", "none");
+    viewFullCountries(countries)
+  }
+  setTimeout(() => {
+    hideShowContainerLabel("main", "block");
+    hideShowContainerLabel("header", "flex");
+    container_details.style.display = "none";
+    container_home.style.display = "flex";
+    changeRoutes("#home");
+    showHeader("none");
+  }, [2000]);
+});
+
+volver.addEventListener("click", (e) => {
   const params = location.hash.split("/")[0];
   inputBox.value='';
   if (params !== "#home" || params === "#home") {
