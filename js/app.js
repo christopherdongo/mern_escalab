@@ -23,6 +23,7 @@ const container__loader = document.querySelector(".container__loader");
 const search_countries = document.getElementById("search_countries");
 const logo = document.getElementById("logo");
 const volver = document.getElementById("volver");
+const volver_details = document.getElementById("volver_details");
 
 /*options*/
 const selected = document.querySelector(".selected");
@@ -40,6 +41,19 @@ const notfound = document.getElementById("notfound");
 
 
 /*events*/
+
+form.addEventListener("submit", (e) => {
+  showHeader("flex");
+  e.preventDefault();
+  if (inputBox.value.length !== 0) {
+    container_home.style.display = "none";
+    container_details.style.display = "none";
+    main.style.display = "none";
+    searchCountries(inputBox.value);
+    inputBox.value = "";
+  }
+});
+
 
 inputBox.addEventListener("input", function () {
   // const del = filterNameCountries(this.value)
@@ -138,13 +152,11 @@ logo.addEventListener("click", (e) => {
 });
 
 volver.addEventListener("click", (e) => {
-  const params = location.hash.split("/")[0];
-  inputBox.value='';
-  if (params !== "#home" || params === "#home") {
+
     showHeader("flex");
     hideShowContainerLabel("main", "none");
     viewFullCountries(countries)
-  }
+  
   setTimeout(() => {
     hideShowContainerLabel("main", "block");
     hideShowContainerLabel("header", "flex");
@@ -153,6 +165,26 @@ volver.addEventListener("click", (e) => {
     changeRoutes("#home");
     showHeader("none");
   }, [2000]);
+
+  inputBox.value='';
+});
+
+volver_details.addEventListener("click", (e) => {
+
+  showHeader("flex");
+  hideShowContainerLabel("main", "none");
+  viewFullCountries(countries)
+
+setTimeout(() => {
+  hideShowContainerLabel("main", "block");
+  hideShowContainerLabel("header", "flex");
+  container_details.style.display = "none";
+  container_home.style.display = "flex";
+  changeRoutes("#home");
+  showHeader("none");
+}, [2000]);
+
+inputBox.value='';
 });
 
 
